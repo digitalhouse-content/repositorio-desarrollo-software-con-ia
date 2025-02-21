@@ -41,6 +41,12 @@ Este repositorio se irá actualizando con nuevos enlaces, recursos y ejemplos de
 
 ---
 
+## Acerca del Curso de Desarrollo de Software con Inteligencia Artificial
+
+En el **Curso de Desarrollo de Software con Inteligencia Artificial**, exploraremos cómo la IA está transformando el mundo del desarrollo de software. Aprenderás a utilizar herramientas y tecnologías avanzadas, como chatbots, asistentes virtuales, IDEs potenciados por IA, modelos de lenguaje (LLMs) y más, para mejorar tu eficiencia y productividad como programador.
+
+---
+
 # Acerca de SERGIE CODE:
 #### ¡Hola! ¡Yo soy Sergie Code y soy Software Engineer! Soy tech lead de un team Frontend con el cual hacemos desarrollos especializados en empresas de Seguros. También me dedico a la divulgación de tecnología, programación e Inteligencia Artificial por redes sociales. Con mucho orgullo he podido dar clases en la Universidad y además en diversos cursos online acerca de desarrollo web
 
