@@ -14,6 +14,7 @@ Aquí encontrarás los enlaces para descargar e instalar las herramientas básic
 - **Visual Studio Code**: [Descargar VS Code](https://code.visualstudio.com/)
 - **GIT**: [Descargar GIT](https://git-scm.com/)
 - **POSTMAN**: [Descargar POSTMAN](https://www.postman.com/downloads/)
+- **Table Plus**: [Descargar Table Plus](https://tableplus.com/download)
 - **Docker**: [Descargar Docker](https://www.docker.com/)
 - **Python**: [Descargar Python](https://www.python.org/)
 - **Node.js**: [Descargar Node.js](https://nodejs.org/)
