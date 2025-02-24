@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <div class="tabs">
+            <button id="register-tab" class="tab-button active">Register</button>
+            <button id="login-tab" class="tab-button">Login</button>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <form id="register-form" class="form active">
+            <h2>Register</h2>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <input type="text" id="register-full-name" placeholder="Full Name" required>
+            <button type="submit">Sign Up</button>
+            <p id="register-message"></p>
+        </form>
+
+        <!-- Formulario de Login -->
+        <form id="login-form" class="form">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+            <p id="login-message"></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

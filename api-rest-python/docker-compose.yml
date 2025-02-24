@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: users_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  api:
+    build: .
+    container_name: python_api
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/users_db
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+
+volumes:
+  pgdata:
