@@ -1,0 +1,242 @@
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #03A9F4;
+  --accent-color: #FF9800;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --border-radius: 8px;
+  --font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Contenedor central para centrar el contenido */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Estilos para encabezados */
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para formularios */
+form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para la lista de usuarios */
+.user-list {
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.user-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.user-list li:last-child {
+  border-bottom: none;
+}
+
+/* Botones en la lista */
+.user-list button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.user-list .edit-btn {
+  background-color: var(--secondary-color);
+}
+
+.user-list .edit-btn:hover {
+  background-color: #0288d1;
+}
+
+.user-list .delete-btn {
+  background-color: var(--accent-color);
+}
+
+.user-list .delete-btn:hover {
+  background-color: #e68900;
+}
+
+/* Estilos para enlaces de navegación */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Contenedor de tarjetas de usuarios usando Grid */
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* Estilo de cada tarjeta de usuario */
+.user-card {
+  background: #fff;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Información del usuario en la tarjeta */
+.user-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary-color, #4CAF50);
+}
+
+.user-card p {
+  margin: 0.25rem 0;
+  color: var(--text-color, #333);
+}
+
+/* Contenedor de botones de acción */
+.user-card .action-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Botones de acción */
+.user-card .action-buttons button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #fff;
+}
+
+.user-card .action-buttons .edit-btn {
+  background-color: var(--secondary-color, #03A9F4);
+}
+
+.user-card .action-buttons .edit-btn:hover {
+  background-color: #0288d1;
+}
+
+.user-card .action-buttons .delete-btn {
+  background-color: var(--accent-color, #FF9800);
+}
+
+.user-card .action-buttons .delete-btn:hover {
+  background-color: #e68900;
+}
+
+.user-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+  max-width: 1200px;
+}
+
+.add-user-btn {
+  background-color: var(--primary-color, #4CAF50);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-user-btn:hover {
+  background-color: #45a049;
+}
