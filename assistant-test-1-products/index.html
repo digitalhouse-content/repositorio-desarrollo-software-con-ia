@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda FakeStore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda FakeStore</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2 class="form-agregar">Agregar Producto</h2>
+            <h2 class="form-editar">Editar Producto</h2>
+            <input type="text" id="title" placeholder="Título">
+            <input type="number" id="price" placeholder="Precio">
+            <textarea id="description" placeholder="Descripción"></textarea>
+            <input type="text" id="category" placeholder="Categoría">
+            <input type="text" id="image" placeholder="URL de Imagen">
+            <button class="button-agregar" onclick="addProduct()">Agregar</button>
+            <button class="button-editar" onclick="updateProduct()">Actualizar</button>
+        </div>
+        <section id="productos" class="productos-container">
+            <!-- Productos se cargarán aquí -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
