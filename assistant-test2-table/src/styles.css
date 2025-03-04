@@ -1,0 +1,60 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .filter-btn,
+  .clear-btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .filter-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .clear-btn {
+    background-color: #6c757d;
+    color: white;
+  }
+
+  .critical-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .task-table th, .task-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .task-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
