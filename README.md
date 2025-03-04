@@ -44,6 +44,34 @@ Este repositorio se irá actualizando con nuevos enlaces, recursos y ejemplos de
 
 ---
 
+## Tabla de Asistentes
+
+| Asistente               | Gratuito       | Notas                                                                 |
+|-------------------------|----------------|----------------------------------------------------------------------|
+| **GitHub Copilot**      | ❌ No          | Solo pago, aunque algunas universidades lo ofrecen gratis.          |
+| **Codeium**             | ✅ Sí          | Gratis para uso individual.                                         |
+| **Amazon CodeWhisperer**| ✅ Sí          | Gratis para uso personal, pago en empresas.                         |
+| **Tabnine**             | ✅ Parcial     | Gratis con autocompletado básico. Versión Pro es paga.              |
+| **JetBrains AI Assistant** | ❌ No      | Solo en planes pagos de JetBrains.                                  |
+| **StarCoder**           | ✅ Sí          | Open-source, lo podés usar sin pagar.                               |
+| **Meta Code Llama**     | ✅ Sí          | Open-source, requiere infraestructura para correrlo.                |
+
+
+---
+
+## Tabla de Editores/IDE
+
+| Editor/IDE              | Gratuito       | Notas                                                                 |
+|-------------------------|----------------|----------------------------------------------------------------------|
+| **Cursor**              | ✅ Sí          | Gratis con límites, plan Pro con más uso de IA.                     |
+| **Bolt**                | ✅ Sí          | Gratis con IA limitada.                                             |
+| **Zed**                 | ✅ Sí          | Gratis, pero la IA requiere configuración propia.                   |
+| **Fleet (JetBrains)**   | ❌ No          | Pago, sin versión gratuita.                                         |
+| **Replit Ghostwriter**  | ✅ Parcial     | Tiene versión gratuita con funciones limitadas.                     |
+
+
+---
+
 ## Acerca del Curso de Desarrollo de Software con Inteligencia Artificial
 
 En el **Curso de Desarrollo de Software con Inteligencia Artificial**, exploraremos cómo la IA está transformando el mundo del desarrollo de software. Aprenderás a utilizar herramientas y tecnologías avanzadas, como chatbots, asistentes virtuales, IDEs potenciados por IA, modelos de lenguaje (LLMs) y más, para mejorar tu eficiencia y productividad como programador.
