@@ -55,9 +55,6 @@ Este repositorio se irá actualizando con nuevos enlaces, recursos y ejemplos de
 | **JetBrains AI Assistant** | ❌ No      | Solo en planes pagos de JetBrains.                                  |
 | **StarCoder**           | ✅ Sí          | Open-source, lo podés usar sin pagar.                               |
 | **Meta Code Llama**     | ✅ Sí          | Open-source, requiere infraestructura para correrlo.                |
-| **DeepMind AlphaCode**  | ❌ No          | No está disponible para uso público.                                |
-| **CodeGeeX**            | ✅ Sí          | Gratis, con opción de API paga.                                     |
-| **Cody (Sourcegraph)**  | ✅ Sí          | Gratis con límite de consultas diarias.                             |
 
 
 ---
