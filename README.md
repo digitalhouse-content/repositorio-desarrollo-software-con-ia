@@ -31,6 +31,7 @@ En esta sección, encontrarás enlaces a las plataformas y documentación más r
 - **Claude AI Anthropic**: [ClaudAI](https://claude.ai/)
 - **Qwen**: [Qwen](https://qwen.ai/)
 - **Gemini**: [Gemini](https://www.gemini.google.com/)
+- **Trae(TIKTOK)**: [Trae](https://www.trae.ai/)
 - **Documentación de Angular**: [Angular Docs](https://angular.dev)
 - **Documentación de React**: [React Docs](https://reactjs.org/docs/getting-started.html)
 - **Vite**: [Vite](https://vitejs.dev/)
@@ -64,10 +65,20 @@ Este repositorio se irá actualizando con nuevos enlaces, recursos y ejemplos de
 | Editor/IDE              | Gratuito       | Notas                                                                 |
 |-------------------------|----------------|----------------------------------------------------------------------|
 | **Cursor**              | ✅ Sí          | Gratis con límites, plan Pro con más uso de IA.                     |
-| **Bolt**                | ✅ Sí          | Gratis con IA limitada.                                             |
 | **Zed**                 | ✅ Sí          | Gratis, pero la IA requiere configuración propia.                   |
+| **Trae(TikTok)**        | ✅ Sí          | Gratis                                                              |
 | **Fleet (JetBrains)**   | ❌ No          | Pago, sin versión gratuita.                                         |
 | **Replit Ghostwriter**  | ✅ Parcial     | Tiene versión gratuita con funciones limitadas.                     |
+
+---
+
+
+## Tabla de Plataformas Constructoras de Apps
+
+| Plataforma              | Gratuito       | Notas                                                                |
+|-------------------------|----------------|----------------------------------------------------------------------|
+| **Bolt**                | ✅ Sí          | Gratis con IA limitada.                                             |
+| **Vercel**              | ❌ No          | Pago, version gratuita limitada.                                    |
 
 
 ---
