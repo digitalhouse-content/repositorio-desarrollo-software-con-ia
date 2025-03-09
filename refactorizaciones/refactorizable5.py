@@ -4,48 +4,51 @@ users = [
     {"id": 3, "name": "Carlos López", "email": "carlos@example.com", "role": "user"}
 ]
 
-def print_admin(user):
-    print(f"ID: {user['id']}")
-    print(f"Nombre: {user['name']}")
-    print(f"Email: {user['email']}")
-    print(f"Rol: {user['role']}")
-    print("----------------------")
-
 def print_user(user):
-    print(f"ID: {user['id']}")
-    print(f"Nombre: {user['name']}")
-    print(f"Email: {user['email']}")
-    print(f"Rol: {user['role']}")
+    """Print user details regardless of role"""
+    details = {
+        "ID": user['id'],
+        "Nombre": user['name'],
+        "Email": user['email'],
+        "Rol": user['role']
+    }
+    
+    for key, value in details.items():
+        print(f"{key}: {value}")
     print("----------------------")
 
-def process_admin(user):
-    print(f"Procesando usuario ADMIN: {user['name']}")
-    print("Asignando permisos avanzados...")
+def process_user(user, role_type):
+    """Process user based on their role"""
+    role_display = "ADMIN" if role_type == "admin" else "NORMAL"
+    action = "Asignando permisos avanzados..." if role_type == "admin" else "Restringiendo acceso a configuraciones avanzadas..."
+    
+    print(f"Procesando usuario {role_display}: {user['name']}")
+    print(action)
     print("----------------------")
 
-def process_user(user):
-    print(f"Procesando usuario NORMAL: {user['name']}")
-    print("Restringiendo acceso a configuraciones avanzadas...")
-    print("----------------------")
+def send_email(user, role_type):
+    """Send role-specific welcome email"""
+    role_display = "ADMIN" if role_type == "admin" else "USUARIO"
+    print(f"Enviando email de bienvenida a {role_display}: {user['email']}")
 
-def send_admin_email(user):
-    print(f"Enviando email de bienvenida a ADMIN: {user['email']}")
-
-def send_user_email(user):
-    print(f"Enviando email de bienvenida a USUARIO: {user['email']}")
-
-def handle_user(user, print_callback, process_callback, email_callback):
-    print_callback(user)
-    process_callback(user)
-    email_callback(user)
+role_handlers = {
+    "admin": {
+        "process": lambda user: process_user(user, "admin"),
+        "email": lambda user: send_email(user, "admin")
+    },
+    "user": {
+        "process": lambda user: process_user(user, "user"),
+        "email": lambda user: send_email(user, "user")
+    }
+}
 
 def main():
     print("Procesando usuarios:")
     for user in users:
-        if user["role"] == "admin":
-            handle_user(user, print_admin, process_admin, send_admin_email)
-        elif user["role"] == "user":
-            handle_user(user, print_user, process_user, send_user_email)
-
+        print_user(user)
+        handler = role_handlers[user["role"]]
+        handler["process"](user)
+        handler["email"](user)
+        print("----------------------")
 if __name__ == "__main__":
     main()

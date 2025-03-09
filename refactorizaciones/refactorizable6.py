@@ -8,23 +8,19 @@ def greet_user(user):
     print("----------------------")
 
 def verify_age(user):
-    if int(user['age']) >= 18:
-        print(f"{user['name']}, tienes acceso a contenido para adultos.")
-    else:
-        print(f"{user['name']}, tu acceso está restringido.")
+    access_message = "tienes acceso a contenido completo de la web." if int(user['age']) >= 18 else "tu acceso está restringido."
+    print(f"{user['name']}, {access_message}")
     print("----------------------")
 
-def process_user(user, greet_callback, verify_callback):
-    greet_callback(user)
-    verify_callback(user)
+def process_user(user):
+    greet_user(user)
+    verify_age(user)
 
 def main():
     print("Registro de usuarios:")
-    user1 = get_user_input()
-    process_user(user1, greet_user, verify_age)
-    
-    user2 = get_user_input()
-    process_user(user2, greet_user, verify_age)
-    
+    for _ in range(2):  # Loop to handle multiple users
+        user = get_user_input()
+        process_user(user)
+
 if __name__ == "__main__":
     main()
