@@ -3,48 +3,34 @@ const users = [
     { firstName: 'María', lastName: 'Gómez', age: 25, email: 'maria@example.com', role: 'admin' }
 ];
 
-function getUserFullName(user) {
-    return user.firstName + ' ' + user.lastName;
+function getFullName(person) {
+    return `${person.firstName} ${person.lastName}`;
 }
 
-function getAdminFullName(admin) {
-    return admin.firstName + ' ' + admin.lastName;
-}
+function printPersonDetails(person) {
+    const details = {
+        'Nombre': getFullName(person),
+        'Edad': person.age,
+        'Email': person.email,
+        'Rol': person.role
+    };
 
-function printUserDetails(user) {
-    console.log('Nombre: ' + getUserFullName(user));
-    console.log('Edad: ' + user.age);
-    console.log('Email: ' + user.email);
-    console.log('Rol: ' + user.role);
+    Object.entries(details).forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+    });
     console.log('----------------------');
 }
 
-function printAdminDetails(admin) {
-    console.log('Nombre: ' + getAdminFullName(admin));
-    console.log('Edad: ' + admin.age);
-    console.log('Email: ' + admin.email);
-    console.log('Rol: ' + admin.role);
-    console.log('----------------------');
-}
-
-function logUserEmail(user) {
-    console.log('Email del usuario: ' + user.email);
-}
-
-function logAdminEmail(admin) {
-    console.log('Email del administrador: ' + admin.email);
+function logEmail(person) {
+    const roleText = person.role === 'admin' ? 'administrador' : 'usuario';
+    console.log(`Email del ${roleText}: ${person.email}`);
 }
 
 function main() {
     console.log('Detalles de los usuarios:');
     users.forEach(user => {
-        if (user.role === 'user') {
-            printUserDetails(user);
-            logUserEmail(user);
-        } else if (user.role === 'admin') {
-            printAdminDetails(user);
-            logAdminEmail(user);
-        }
+        printPersonDetails(user);
+        logEmail(user);
     });
 }
 

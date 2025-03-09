@@ -5,71 +5,74 @@ const orders = [
 ];
 
 function printOrder(order) {
-    console.log('ID: ' + order.id);
-    console.log('Cliente: ' + order.customer);
-    console.log('Productos: ' + order.items.join(', '));
-    console.log('Total: $' + order.total);
-    console.log('Estado: ' + order.status);
+    const details = {
+        'ID': order.id,
+        'Cliente': order.customer,
+        'Productos': order.items.join(', '),
+        'Total': `$${order.total}`,
+        'Estado': order.status
+    };
+
+    Object.entries(details).forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+    });
     console.log('----------------------');
 }
 
-function processOrder(order, processCallback, statusCallback) {
+const orderActions = {
+    pending: {
+        process: order => {
+            console.log('Enviando email de confirmación...');
+            console.log('Pedido en preparación.');
+        },
+        email: order => {
+            console.log(`Enviando email de recordatorio para pedido PENDIENTE ID ${order.id}`);
+        },
+        notification: order => {
+            console.log('Notificación push: Su pedido pendiente aún está en proceso.');
+        },
+        status: order => {
+            console.log('Estado actualizado: Pedido sigue en preparación.');
+        }
+    },
+    completed: {
+        process: order => {
+            console.log('Verificando que ya fue enviado...');
+            console.log('Enviando encuesta de satisfacción.');
+        },
+        email: order => {
+            console.log(`Enviando email de agradecimiento para pedido COMPLETADO ID ${order.id}`);
+        },
+        notification: order => {
+            console.log('Notificación push: Gracias por su compra. Su pedido ha sido entregado.');
+        },
+        status: order => {
+            console.log('Estado actualizado: Pedido marcado como completado.');
+        }
+    }
+};
+
+function processOrder(order) {
+    const actions = orderActions[order.status];
     console.log(`Procesando pedido ${order.status.toUpperCase()} ID ${order.id} de ${order.customer}`);
-    processCallback(order);
-    statusCallback(order);
+    actions.process(order);
+    actions.status(order);
     console.log('----------------------');
 }
 
-function sendOrderEmail(order, emailCallback, notificationCallback) {
-    emailCallback(order);
-    notificationCallback(order);
+function sendOrderEmail(order) {
+    const actions = orderActions[order.status];
+    actions.email(order);
+    actions.notification(order);
 }
-
-const pendingOrderProcessing = order => {
-    console.log('Enviando email de confirmación...');
-    console.log('Pedido en preparación.');
-};
-
-const completedOrderProcessing = order => {
-    console.log('Verificando que ya fue enviado...');
-    console.log('Enviando encuesta de satisfacción.');
-};
-
-const pendingOrderEmail = order => {
-    console.log('Enviando email de recordatorio para pedido PENDIENTE ID ' + order.id);
-};
-
-const completedOrderEmail = order => {
-    console.log('Enviando email de agradecimiento para pedido COMPLETADO ID ' + order.id);
-};
-
-const pendingOrderNotification = order => {
-    console.log('Notificación push: Su pedido pendiente aún está en proceso.');
-};
-
-const completedOrderNotification = order => {
-    console.log('Notificación push: Gracias por su compra. Su pedido ha sido entregado.');
-};
-
-const pendingOrderStatus = order => {
-    console.log('Estado actualizado: Pedido sigue en preparación.');
-};
-
-const completedOrderStatus = order => {
-    console.log('Estado actualizado: Pedido marcado como completado.');
-};
 
 function main() {
     console.log('Procesando pedidos:');
     orders.forEach(order => {
         printOrder(order);
-        if (order.status === 'pending') {
-            processOrder(order, pendingOrderProcessing, pendingOrderStatus);
-            sendOrderEmail(order, pendingOrderEmail, pendingOrderNotification);
-        } else if (order.status === 'completed') {
-            processOrder(order, completedOrderProcessing, completedOrderStatus);
-            sendOrderEmail(order, completedOrderEmail, completedOrderNotification);
-        }
+        processOrder(order);
+        sendOrderEmail(order);
+        console.log('----------------------');
     });
 }
 

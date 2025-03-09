@@ -5,46 +5,38 @@ const products = [
     { name: 'Pants', price: 40, category: 'Clothing' }
 ];
 
-function printElectronicsProduct(product) {
-    console.log('Producto: ' + product.name);
-    console.log('Precio: $' + product.price);
-    console.log('Categoría: ' + product.category);
-    console.log('----------------------');
+const DISCOUNT_RATES = {
+    'Electronics': 0.9,
+    'Clothing': 0.85
+};
+
+function printProduct(product) {
+    const details = {
+        'Producto': product.name,
+        'Precio': `$${product.price}`,
+        'Categoría': product.category
+    };
+
+    Object.entries(details).forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+    });
 }
 
-function printClothingProduct(product) {
-    console.log('Producto: ' + product.name);
-    console.log('Precio: $' + product.price);
-    console.log('Categoría: ' + product.category);
-    console.log('----------------------');
+function calculateDiscount(product) {
+    const discountRate = DISCOUNT_RATES[product.category];
+    return product.price * discountRate;
 }
 
-function calculateElectronicsDiscount(product) {
-    return product.price * 0.9;
-}
-
-function calculateClothingDiscount(product) {
-    return product.price * 0.85;
-}
-
-function showElectronicsDiscountedPrice(product) {
-    console.log('Descuento aplicado: $' + calculateElectronicsDiscount(product));
-}
-
-function showClothingDiscountedPrice(product) {
-    console.log('Descuento aplicado: $' + calculateClothingDiscount(product));
+function showDiscountedPrice(product) {
+    console.log(`Descuento aplicado: $${calculateDiscount(product)}`);
 }
 
 function main() {
     console.log('Lista de productos:');
     products.forEach(product => {
-        if (product.category === 'Electronics') {
-            printElectronicsProduct(product);
-            showElectronicsDiscountedPrice(product);
-        } else if (product.category === 'Clothing') {
-            printClothingProduct(product);
-            showClothingDiscountedPrice(product);
-        }
+        printProduct(product);
+        showDiscountedPrice(product);
+        console.log('----------------------');
     });
 }
 
